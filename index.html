@@ -1,153 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <!-- Google Verification -->
+  <meta charset="UTF-8" />
   <meta name="google-site-verification" content="lND_Y8YuDA-zzYhe3ATFT6733HKrsW7WOqOi4YPT84Y" />
-
-  <title>Colonial Painting & Remodeling | Austin TX</title>
-
-  <meta name="description" content="Colonial Painting & Remodeling - Since 2008. Interior & Exterior Painting, Carpentry, Flooring, Plumbing, Electrical & More. Serving Austin & surrounding areas. Free Estimates.">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colonial Painting & Remodeling</title>
   <style>
-    :root {
-      --blue: #1f4fd8;
-      --dark: #2b2b2b;
-      --light: #f4f4f4;
-      --white: #ffffff;
-    }
-
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+    /* Reset and base styles */
+    body, html {
       margin: 0;
       padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #222;
+      scroll-behavior: smooth;
     }
-
-    body {
-      background: var(--white);
-      color: var(--dark);
+    a {
+      color: royalblue;
+      text-decoration: none;
+      font-weight: bold;
     }
-
+    a:hover {
+      text-decoration: underline;
+    }
+    /* Header/Nav */
     header {
-      position: sticky;
+      position: fixed;
       top: 0;
-      background: var(--white);
-      padding: 15px 30px;
+      left: 0;
+      width: 100%;
+      height: 60px; /* fixed height */
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #ddd;
+      justify-content: space-between;
+      padding: 0 20px;
       z-index: 1000;
     }
-
     header h1 {
-      color: var(--blue);
-      font-size: 22px;
+      margin: 0;
+      font-size: 18px;
+      color: #0c4a9d; /* cobalt blue */
     }
-
+    nav {
+      display: flex;
+      gap: 20px;
+    }
     nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: bold;
+      font-size: 14px;
       position: relative;
+      padding-bottom: 2px;
     }
-
-    nav a.active::after {
+    nav a.active,
+    nav a:hover {
+      text-decoration: none;
+    }
+    nav a.active::after,
+    nav a:hover::after {
       content: "";
       position: absolute;
+      left: 0;
+      bottom: 0;
       width: 100%;
       height: 2px;
-      background: var(--blue);
-      left: 0;
-      bottom: -5px;
+      background-color: #0c4a9d; /* cobalt blue */
     }
-
-    section {
-      padding: 80px 20px;
-      max-width: 1100px;
-      margin: auto;
+    /* Main content padding so it is below the fixed header */
+    main {
+      padding: 80px 20px 40px;
+      max-width: 900px;
+      margin: 0 auto;
     }
-
-    .hero {
+    /* Tagline section */
+    .tagline {
+      background-color: #f0f0f0;
+      padding: 20px;
       text-align: center;
-      background: var(--light);
+      margin-bottom: 40px;
+      border-radius: 4px;
     }
-
-    .hero h2 {
-      font-size: 36px;
-      color: var(--blue);
+    .tagline h2 {
+      color: #0c4a9d;
+      margin: 0 0 8px;
     }
-
-    .hero p {
-      margin-top: 10px;
-      font-size: 18px;
+    .tagline p {
+      margin: 0;
+      font-size: 14px;
+      color: #333;
     }
-
-    h3 {
-      margin-bottom: 20px;
-      color: var(--blue);
+    /* Sections */
+    section {
+      margin-bottom: 40px;
     }
-
-    ul {
-      list-style: none;
-      columns: 2;
+    section h3 {
+      color: #0c4a9d;
+      margin-bottom: 12px;
     }
-
-    ul li {
-      margin-bottom: 10px;
-    }
-
-    .process li {
-      margin-bottom: 15px;
-    }
-
-    .contact p {
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-
-    .review-box {
+    /* Services and Process list styling */
+    .two-column-list {
       display: flex;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 10px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
     }
-
-    input, textarea, select {
+    .two-column-list ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      width: 45%;
+    }
+    .two-column-list ul li {
+      margin-bottom: 8px;
+    }
+    /* Review form */
+    form {
+      max-width: 600px;
+      margin-top: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #0c4a9d;
+    }
+    select, textarea {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
+      padding: 8px;
+      font-size: 14px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
     }
-
     button {
-      padding: 10px 20px;
-      background: var(--blue);
+      background-color: #0c4a9d;
       color: white;
       border: none;
+      padding: 10px 20px;
+      font-size: 14px;
       cursor: pointer;
+      border-radius: 4px;
     }
-
+    button:hover {
+      background-color: #08437a;
+    }
+    /* Contact info */
+    .contact-info p {
+      margin: 6px 0;
+      font-size: 15px;
+    }
+    .contact-info p span {
+      margin-right: 6px;
+    }
+    /* Footer */
     footer {
-      background: var(--dark);
-      color: white;
+      background-color: #222;
+      color: #aaa;
       text-align: center;
-      padding: 20px;
+      padding: 15px 10px;
+      font-size: 13px;
+      margin-top: 40px;
     }
   </style>
 </head>
-
 <body>
 
 <header>
   <h1>Colonial Painting & Remodeling</h1>
   <nav>
-    <a href="#home">Home</a>
+    <a href="#services" class="active">Home</a>
     <a href="#services">Services</a>
     <a href="#process">Process</a>
     <a href="#reviews">Reviews</a>
@@ -156,87 +178,124 @@
   </nav>
 </header>
 
-<section id="home" class="hero">
-  <h2>Your Home, in Trusted Hands</h2>
-  <p>Since 2008 • Austin & Surrounding Areas • Free Estimates</p>
-</section>
+<main>
+  <section class="tagline">
+    <h2>Your Home, in Trusted Hands</h2>
+    <p>Since 2008 • Austin & Surrounding Areas • Free Estimates</p>
+  </section>
 
-<section id="services">
-  <h3>Our Services</h3>
-  <ul>
-    <li>Interior & Exterior Painting</li>
-    <li>Sheetrock & Texture</li>
-    <li>Carpentry Work</li>
-    <li>Flooring (Wood, Tile, Laminate)</li>
-    <li>Air Conditioning</li>
-    <li>Plumbing</li>
-    <li>Electrical</li>
-    <li>Fencing</li>
-  </ul>
-</section>
+  <section id="services">
+    <h3>Our Services</h3>
+    <div class="two-column-list">
+      <ul>
+        <li>Interior & Exterior Painting</li>
+        <li>Sheetrock & Texture</li>
+        <li>Carpentry Work</li>
+        <li>Flooring (Wood, Tile, Laminate)</li>
+      </ul>
+      <ul>
+        <li>Air Conditioning</li>
+        <li>Plumbing</li>
+        <li>Electrical</li>
+        <li>Fencing</li>
+      </ul>
+    </div>
+  </section>
 
-<section id="process">
-  <h3>Our Process</h3>
-  <ul class="process">
-    <li>Contact Us</li>
-    <li>Set a date to view the job</li>
-    <li>Receive an estimate</li>
-    <li>Discuss estimate</li>
-    <li>Set job start date</li>
-    <li>We complete the job</li>
-    <li>We don’t leave until you’re satisfied</li>
-  </ul>
-</section>
+  <section id="process">
+    <h3>Our Process</h3>
+    <div class="two-column-list">
+      <ul>
+        <li>Contact Us</li>
+        <li>Set a date to view the job</li>
+        <li>Receive an estimate</li>
+        <li>Discuss estimate</li>
+      </ul>
+      <ul>
+        <li>Set job start date</li>
+        <li>We complete the job</li>
+        <li>We don’t leave until you’re satisfied</li>
+      </ul>
+    </div>
+  </section>
 
-<section id="reviews">
-  <h3>Leave a Review</h3>
+  <section id="reviews">
+    <h3>Leave a Review</h3>
+    <form id="reviewForm">
+      <label for="rating">Rating:</label>
+      <select id="rating" name="rating" required>
+        <option value="">-- Select Rating --</option>
+        <option value="1">1 Star</option>
+        <option value="2">2 Stars</option>
+        <option value="3">3 Stars</option>
+        <option value="4">4 Stars</option>
+        <option value="5">5 Stars</option>
+      </select>
 
-  <div class="review-box">
-    <label>Rating:</label>
-    <select>
-      <option>5 Stars</option>
-      <option>4 Stars</option>
-      <option>3 Stars</option>
-      <option>2 Stars</option>
-      <option>1 Star</option>
-    </select>
-  </div>
+      <label for="reviewText">Write your review...</label>
+      <textarea id="reviewText" name="reviewText" rows="4" placeholder="Write your review here..." required></textarea>
 
-  <textarea placeholder="Write your review..."></textarea>
-  <button>Submit Review</button>
-</section>
+      <button type="submit">Submit Review</button>
+    </form>
+  </section>
 
-<section id="contact" class="contact">
-  <h3>Contact Us</h3>
-  <p>📞 Fabian Cordero: 512-517-6845</p>
-  <p>📞 Fatima Cordero: 512-517-6380</p>
-  <p>📧 Email: Fabiancolonialpainting@gmail.com</p>
-  <p>Free Estimates Available</p>
-</section>
+  <section id="contact" class="contact-info">
+    <h3>Contact Us</h3>
+    <p><span>📞</span> Fabian Cordero: 512-517-6845</p>
+    <p><span>📞</span> Fatima Cordero: 512-517-6380</p>
+    <p><span>📧</span> Email: Fabiancolonialpainting@gmail.com</p>
+    <p>Free Estimates Available</p>
+  </section>
+</main>
 
 <footer>
-  © 2008–2025 Colonial Painting & Remodeling
+  &copy; 2008&ndash;2025 Colonial Painting & Remodeling
 </footer>
 
 <script>
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll("nav a");
+  // Smooth scroll for nav links with #id
+  document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(anchor.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+      // Update active class on click
+      document.querySelectorAll('nav a').forEach(nav => nav.classList.remove('active'));
+      anchor.classList.add('active');
+    });
+  });
 
-  window.addEventListener("scroll", () => {
-    let current = "";
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 100;
-      if (scrollY >= sectionTop) {
-        current = section.getAttribute("id");
+  // Update nav underline on scroll
+  window.addEventListener('scroll', () => {
+    const sections = ['services', 'process', 'reviews', 'contact'];
+    let scrollPos = window.scrollY + 70; // header offset
+
+    sections.forEach(id => {
+      const section = document.getElementById(id);
+      const link = document.querySelector(`nav a[href="#${id}"]`);
+      if (
+        section.offsetTop <= scrollPos &&
+        section.offsetTop + section.offsetHeight > scrollPos
+      ) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
       }
     });
 
-    navLinks.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === "#" + current) {
-        link.classList.add("active");
-      }
-    });
+    // Home link active when near top
+    if (window.scrollY < 80) {
+      document.querySelectorAll('nav a').forEach(nav => nav.classList.remove('active'));
+      document.querySelector('nav a[href="#services"]').classList.add('active');
+    }
+  });
+
+  // Review form submission (dummy, no backend)
+  document.getElementById('reviewForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your review! (Note: Reviews are not saved on this demo site.)');
+    this.reset();
   });
 </script>
 
