@@ -1,302 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="google-site-verification" content="lND_Y8YuDA-zzYhe3ATFT6733HKrsW7WOqOi4YPT84Y" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+<meta name="google-site-verification" content="lND_Y8YuDA-zzYhe3ATFT6733HKrsW7WOqOi4YPT84Y" />
   <title>Colonial Painting & Remodeling</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
-    /* Reset and base styles */
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      color: #222;
-      scroll-behavior: smooth;
+    html {
+      scroll-behavior: smooth; /* Smooth scrolling */
     }
-    a {
-      color: royalblue;
-      text-decoration: none;
-      font-weight: bold;
+
+    :root {
+      --blue: #1f4fd8;
+      --dark-grey: #2b2b2b;
+      --light-grey: #f4f4f4;
+      --white: #ffffff;
     }
-    a:hover {
-      text-decoration: underline;
-    }
-    /* Header/Nav */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
+    body { color: var(--dark-grey); line-height: 1.6; }
+
+    header { background: var(--blue); color: var(--white); padding: 20px; position: sticky; top: 0; z-index: 100; }
+    nav { max-width: 1100px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav a { color: var(--white); text-decoration: none; font-weight: bold; }
+    nav a.active { text-decoration: underline; }
+
+    .hero { text-align: center; padding: 90px 20px; background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)); color: white; }
+    .hero h1 { font-size: 2.6rem; }
+    .hero p { font-size: 1.2rem; margin: 10px 0; }
+    .btn { display: inline-block; background: var(--blue); color: white; padding: 15px 25px; border-radius: 5px; text-decoration: none; margin-top: 20px; font-weight: bold; cursor: pointer; }
+
+    section { max-width: 1100px; margin: auto; padding: 60px 20px; }
+    h2 { text-align: center; color: var(--blue); margin-bottom: 30px; }
+
+    .services, .process { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .box { background: var(--light-grey); padding: 25px; border-radius: 6px; text-align: center; font-weight: bold; }
+    .dark { background: var(--dark-grey); color: white; }
+    .contact { text-align: center; }
+    .reviews { text-align: center; }
+
+    /* Review form fixes */
+    input, textarea, select {
       width: 100%;
-      height: 60px; /* fixed height */
-      background-color: white;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      max-width: 400px;
+      padding: 10px;
+      margin: 0;
+      vertical-align: middle;
+      font-size: 16px;
+      line-height: 1.4;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .review-form {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px; /* Space between dropdown and textarea */
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .review-list { margin-top: 30px; }
+    .review-list img { width: 100%; max-width: 200px; margin-top: 10px; border-radius: 6px; cursor: pointer; }
+
+    /* Lightbox overlay */
+    #lightbox-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center;
       z-index: 1000;
     }
-    header h1 {
-      margin: 0;
-      font-size: 18px;
-      color: #0c4a9d; /* cobalt blue */
-    }
-    nav {
-      display: flex;
-      gap: 20px;
-    }
-    nav a {
-      font-size: 14px;
-      position: relative;
-      padding-bottom: 2px;
-    }
-    nav a.active,
-    nav a:hover {
-      text-decoration: none;
-    }
-    nav a.active::after,
-    nav a:hover::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 2px;
-      background-color: #0c4a9d; /* cobalt blue */
-    }
-    /* Main content padding so it is below the fixed header */
-    main {
-      padding: 80px 20px 40px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    /* Tagline section */
-    .tagline {
-      background-color: #f0f0f0;
-      padding: 20px;
-      text-align: center;
-      margin-bottom: 40px;
-      border-radius: 4px;
-    }
-    .tagline h2 {
-      color: #0c4a9d;
-      margin: 0 0 8px;
-    }
-    .tagline p {
-      margin: 0;
-      font-size: 14px;
-      color: #333;
-    }
-    /* Sections */
-    section {
-      margin-bottom: 40px;
-    }
-    section h3 {
-      color: #0c4a9d;
-      margin-bottom: 12px;
-    }
-    /* Services and Process list styling */
-    .two-column-list {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .two-column-list ul {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-      width: 45%;
-    }
-    .two-column-list ul li {
-      margin-bottom: 8px;
-    }
-    /* Review form */
-    form {
-      max-width: 600px;
-      margin-top: 20px;
-    }
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: bold;
-      color: #0c4a9d;
-    }
-    select, textarea {
-      width: 100%;
-      padding: 8px;
-      font-size: 14px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      resize: vertical;
-    }
-    button {
-      background-color: #0c4a9d;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 14px;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    button:hover {
-      background-color: #08437a;
-    }
-    /* Contact info */
-    .contact-info p {
-      margin: 6px 0;
-      font-size: 15px;
-    }
-    .contact-info p span {
-      margin-right: 6px;
-    }
-    /* Footer */
-    footer {
-      background-color: #222;
-      color: #aaa;
-      text-align: center;
-      padding: 15px 10px;
-      font-size: 13px;
-      margin-top: 40px;
-    }
+    #lightbox-overlay img { max-width: 90%; max-height: 90%; border-radius: 6px; }
+
+    footer { background: var(--dark-grey); color: white; text-align: center; padding: 20px; }
   </style>
 </head>
+
 <body>
 
 <header>
-  <h1>Colonial Painting & Remodeling</h1>
   <nav>
-    <a href="#services" class="active">Home</a>
-    <a href="#services">Services</a>
-    <a href="#process">Process</a>
-    <a href="#reviews">Reviews</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="#contact">Contact</a>
+    <strong>Colonial Painting & Remodeling</strong>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Our Process</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 </header>
 
-<main>
-  <section class="tagline">
-    <h2>Your Home, in Trusted Hands</h2>
-    <p>Since 2008 • Austin & Surrounding Areas • Free Estimates</p>
-  </section>
+<section class="hero">
+  <h1>Your Home, in Trusted Hands</h1>
+  <p><strong>Since 2008</strong></p>
+  <p>Serving Austin & Surrounding Areas</p>
+  <a href="#contact" class="btn">Free Estimates</a>
+</section>
 
-  <section id="services">
-    <h3>Our Services</h3>
-    <div class="two-column-list">
-      <ul>
-        <li>Interior & Exterior Painting</li>
-        <li>Sheetrock & Texture</li>
-        <li>Carpentry Work</li>
-        <li>Flooring (Wood, Tile, Laminate)</li>
-      </ul>
-      <ul>
-        <li>Air Conditioning</li>
-        <li>Plumbing</li>
-        <li>Electrical</li>
-        <li>Fencing</li>
-      </ul>
-    </div>
-  </section>
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="box">Interior & Exterior Painting</div>
+    <div class="box">Sheetrock & Texture</div>
+    <div class="box">Carpentry</div>
+    <div class="box">Flooring (Wood, Tile, Laminate)</div>
+    <div class="box">Air Conditioning</div>
+    <div class="box">Plumbing</div>
+    <div class="box">Electrical</div>
+    <div class="box">Fencing</div>
+  </div>
+</section>
 
-  <section id="process">
-    <h3>Our Process</h3>
-    <div class="two-column-list">
-      <ul>
-        <li>Contact Us</li>
-        <li>Set a date to view the job</li>
-        <li>Receive an estimate</li>
-        <li>Discuss estimate</li>
-      </ul>
-      <ul>
-        <li>Set job start date</li>
-        <li>We complete the job</li>
-        <li>We don’t leave until you’re satisfied</li>
-      </ul>
-    </div>
-  </section>
+<section id="process">
+  <h2>Our Process</h2>
+  <div class="process">
+    <div class="box">1️⃣ Contact Us</div>
+    <div class="box">2️⃣ Schedule a Visit to View the Job</div>
+    <div class="box">3️⃣ We Send You an Estimate</div>
+    <div class="box">4️⃣ Discuss the Estimate</div>
+    <div class="box">5️⃣ Set a Job Start Date</div>
+    <div class="box">6️⃣ We Complete the Work</div>
+    <div class="box">7️⃣ Final Walk-Through — We Don’t Leave Until You’re Satisfied</div>
+  </div>
+</section>
 
-  <section id="reviews">
-    <h3>Leave a Review</h3>
-    <form id="reviewForm">
-      <label for="rating">Rating:</label>
-      <select id="rating" name="rating" required>
-        <option value="">-- Select Rating --</option>
-        <option value="1">1 Star</option>
-        <option value="2">2 Stars</option>
-        <option value="3">3 Stars</option>
-        <option value="4">4 Stars</option>
-        <option value="5">5 Stars</option>
-      </select>
+<section id="reviews" class="reviews">
+  <h2>Leave a Review</h2>
 
-      <label for="reviewText">Write your review...</label>
-      <textarea id="reviewText" name="reviewText" rows="4" placeholder="Write your review here..." required></textarea>
+  <div class="review-form">
+    <select id="stars">
+      <option value="5">★★★★★ (5 Stars)</option>
+      <option value="4">★★★★☆ (4 Stars)</option>
+      <option value="3">★★★☆☆ (3 Stars)</option>
+      <option value="2">★★☆☆☆ (2 Stars)</option>
+      <option value="1">★☆☆☆☆ (1 Star)</option>
+    </select>
 
-      <button type="submit">Submit Review</button>
-    </form>
-  </section>
+    <textarea id="reviewText" placeholder="Write your review here"></textarea>
 
-  <section id="contact" class="contact-info">
-    <h3>Contact Us</h3>
-    <p><span>📞</span> Fabian Cordero: 512-517-6845</p>
-    <p><span>📞</span> Fatima Cordero: 512-517-6380</p>
-    <p><span>📧</span> Email: Fabiancolonialpainting@gmail.com</p>
-    <p>Free Estimates Available</p>
-  </section>
-</main>
+    <input type="file" id="reviewImage" accept="image/*">
+    <button class="btn" onclick="addReview()">Submit Review</button>
+  </div>
+
+  <div class="review-list" id="reviewList"></div>
+</section>
+
+<section id="contact" class="contact dark">
+  <h2>Contact Us</h2>
+  <p>📞 Fabian Cordero: <a href="tel:15125176845" style="color:white;">512-517-6845</a></p>
+  <p>📞 Fatima Cordero: <a href="tel:15125176380" style="color:white;">512-517-6380</a></p>
+  <p>📧 Email: <a href="mailto:Fabiancolonialpainting@gmail.com" style="color:white;">Fabiancolonialpainting@gmail.com</a></p>
+  <p>Free Estimates • Austin & Surrounding Areas</p>
+</section>
 
 <footer>
-  &copy; 2008&ndash;2025 Colonial Painting & Remodeling
+  © 2025 Colonial Painting & Remodeling
 </footer>
 
+<div id="lightbox-overlay">
+  <img id="lightbox-img" src="" alt="Enlarged Image">
+</div>
+
 <script>
-  // Smooth scroll for nav links with #id
-  document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      e.preventDefault();
-      document.querySelector(anchor.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-      // Update active class on click
-      document.querySelectorAll('nav a').forEach(nav => nav.classList.remove('active'));
-      anchor.classList.add('active');
-    });
-  });
+  // Review submission
+  function addReview() {
+    const stars = document.getElementById("stars").value;
+    const text = document.getElementById("reviewText").value;
+    const fileInput = document.getElementById("reviewImage");
+    const files = fileInput.files;
 
-  // Update nav underline on scroll
-  window.addEventListener('scroll', () => {
-    const sections = ['services', 'process', 'reviews', 'contact'];
-    let scrollPos = window.scrollY + 70; // header offset
+    if (text.trim() === "") return;
 
-    sections.forEach(id => {
-      const section = document.getElementById(id);
-      const link = document.querySelector(`nav a[href="#${id}"]`);
-      if (
-        section.offsetTop <= scrollPos &&
-        section.offsetTop + section.offsetHeight > scrollPos
-      ) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
+    const div = document.createElement("div");
+    div.innerHTML = "⭐".repeat(stars) + "<br>" + text;
+
+    if (files.length > 0) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = document.createElement("img");
+        img.src = e.target.result;
+        img.onclick = () => openLightbox(e.target.result);
+        div.appendChild(img);
+      }
+      reader.readAsDataURL(files[0]);
+    }
+
+    div.innerHTML += "<hr>";
+    document.getElementById("reviewList").prepend(div);
+
+    document.getElementById("reviewText").value = "";
+    document.getElementById("reviewImage").value = "";
+  }
+
+  // Lightbox
+  function openLightbox(src) {
+    const overlay = document.getElementById("lightbox-overlay");
+    const img = document.getElementById("lightbox-img");
+    img.src = src;
+    overlay.style.display = "flex";
+  }
+
+  document.getElementById("lightbox-overlay").onclick = function() {
+    this.style.display = "none";
+  }
+
+  // Dynamic nav underline while scrolling
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav ul li a");
+
+  function updateNav() {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 80;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute("id");
       }
     });
 
-    // Home link active when near top
-    if (window.scrollY < 80) {
-      document.querySelectorAll('nav a').forEach(nav => nav.classList.remove('active'));
-      document.querySelector('nav a[href="#services"]').classList.add('active');
-    }
-  });
+    navLinks.forEach(link => {
+      link.classList.remove("active");
 
-  // Review form submission (dummy, no backend)
-  document.getElementById('reviewForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thank you for your review! (Note: Reviews are not saved on this demo site.)');
-    this.reset();
-  });
+      // Highlight gallery if we are on gallery.html
+      if (window.location.pathname.includes("gallery.html") && link.getAttribute("href") === "gallery.html") {
+        link.classList.add("active");
+      } else if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+
+      // Highlight Home when at the very top
+      if (pageYOffset < sections[0].offsetTop - 50 && link.getAttribute("href") === "index.html") {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateNav);
+  window.addEventListener("load", updateNav);
 </script>
 
 </body>
