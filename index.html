@@ -59,7 +59,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 10px; /* Space between dropdown and textarea */
+      gap: 10px;
       max-width: 400px;
       margin: auto;
     }
@@ -76,6 +76,22 @@
     #lightbox-overlay img { max-width: 90%; max-height: 90%; border-radius: 6px; }
 
     footer { background: var(--dark-grey); color: white; text-align: center; padding: 20px; }
+
+    /* ===== ADDED: Delete review button styles ===== */
+    .delete-review {
+      margin-top: 10px;
+      background: #c62828;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .delete-review:hover {
+      background: #a61d1d;
+    }
   </style>
 </head>
 
@@ -177,6 +193,8 @@
     if (text.trim() === "") return;
 
     const div = document.createElement("div");
+    div.style.marginBottom = "20px";
+
     div.innerHTML = "⭐".repeat(stars) + "<br>" + text;
 
     if (files.length > 0) {
@@ -190,11 +208,27 @@
       reader.readAsDataURL(files[0]);
     }
 
+    /* ===== ADDED: Delete review button ===== */
+    const deleteBtn = document.createElement("button");
+    deleteBtn.className = "delete-review";
+    deleteBtn.textContent = "Delete Review";
+    deleteBtn.onclick = function () {
+      deleteReview(this);
+    };
+    div.appendChild(deleteBtn);
+    /* ===== END ADDITION ===== */
+
     div.innerHTML += "<hr>";
     document.getElementById("reviewList").prepend(div);
 
     document.getElementById("reviewText").value = "";
     document.getElementById("reviewImage").value = "";
+  }
+
+  /* ===== ADDED: Delete review logic ===== */
+  function deleteReview(button) {
+    const reviewDiv = button.parentElement;
+    reviewDiv.remove();
   }
 
   // Lightbox
@@ -226,14 +260,12 @@
     navLinks.forEach(link => {
       link.classList.remove("active");
 
-      // Highlight gallery if we are on gallery.html
       if (window.location.pathname.includes("gallery.html") && link.getAttribute("href") === "gallery.html") {
         link.classList.add("active");
       } else if (link.getAttribute("href") === "#" + current) {
         link.classList.add("active");
       }
 
-      // Highlight Home when at the very top
       if (pageYOffset < sections[0].offsetTop - 50 && link.getAttribute("href") === "index.html") {
         link.classList.add("active");
       }
