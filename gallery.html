@@ -30,7 +30,6 @@
     h2 { text-align: center; color: var(--blue); margin-bottom: 30px; }
 
     .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-    .gallery-grid .placeholder { background: var(--light-grey); padding: 50px; text-align: center; border-radius: 6px; font-weight: bold; color: var(--dark-grey); }
 
     .btn { display: inline-block; background: var(--blue); color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-top: 20px; font-weight: bold; cursor: pointer; }
 
@@ -43,6 +42,39 @@
     #lightbox-overlay img { max-width: 90%; max-height: 90%; border-radius: 6px; }
 
     footer { background: var(--dark-grey); color: white; text-align: center; padding: 20px; margin-top: 40px; }
+
+    /* Before/After Gallery */
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .before-after img {
+      width: 100%;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .before-after-wrapper {
+      background: var(--light-grey);
+      padding: 15px;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .before-after-title {
+      margin-top: 10px;
+      font-weight: bold;
+      color: var(--dark-grey);
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .before-after {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -65,12 +97,7 @@
   <h2>Gallery</h2>
   <p style="text-align:center;">Our gallery will showcase completed projects. Coming soon!</p>
 
-  <div class="gallery-grid" id="galleryGrid">
-    <!-- Placeholder boxes until images are added -->
-    <div class="placeholder">Image Placeholder</div>
-    <div class="placeholder">Image Placeholder</div>
-    <div class="placeholder">Image Placeholder</div>
-  </div>
+  <div class="gallery-grid" id="galleryGrid"></div>
 
   <div style="text-align:center;">
     <a href="index.html" class="btn">Back to Home</a>
@@ -110,6 +137,32 @@
   }
 
   window.addEventListener("load", highlightNav);
+</script>
+
+<!-- Added JSON gallery loader -->
+<script>
+fetch("gallery.json")
+  .then(response => response.json())
+  .then(data => {
+    const grid = document.getElementById("galleryGrid");
+    grid.innerHTML = "";
+
+    data.forEach(item => {
+      const wrapper = document.createElement("div");
+      wrapper.className = "before-after-wrapper";
+
+      wrapper.innerHTML = `
+        <div class="before-after">
+          <img src="${item.before}" alt="Before ${item.title}" onclick="openLightbox('${item.before}')">
+          <img src="${item.after}" alt="After ${item.title}" onclick="openLightbox('${item.after}')">
+        </div>
+        <div class="before-after-title">${item.title}</div>
+      `;
+
+      grid.appendChild(wrapper);
+    });
+  })
+  .catch(err => console.error("Gallery load error:", err));
 </script>
 
 </body>
