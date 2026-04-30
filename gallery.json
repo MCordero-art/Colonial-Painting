@@ -1,2 +1,8 @@
 [
+  {
+    "title": "Kitchen Remodel #1",
+    "before": "images/gallery/kitchen1-before.jpg",
+    "after": "images/gallery/kitchen1-after.jpg",
+    "category": "kitchen"
+  }
 ]
