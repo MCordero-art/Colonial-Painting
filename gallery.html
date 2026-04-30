@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="google-site-verification" content="lND_Y8YuDA-zzYhe3ATFT6733HKrsW7WOqOi4YPT84Y" />
-  <title>Colonial Painting & Remodeling | Austin, TX</title>
+  <title>Gallery | Colonial Painting & Remodeling · Austin, TX</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Austin's trusted painting and remodeling experts since 2008. Kitchen & bathroom renovations, interior & exterior painting, flooring, and more. Free estimates.">
+  <meta name="description" content="Browse our project gallery — before & after photos of kitchen and bathroom renovations, interior and exterior painting, flooring, and more.">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts (same as index) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     /* ============================================================
-       VARIABLES & RESET
+       VARIABLES & RESET  (identical to index.html)
     ============================================================ */
     :root {
       --navy:      #1a3a5c;
@@ -50,7 +49,7 @@
     }
 
     /* ============================================================
-       HEADER & NAV
+       HEADER & NAV  (identical to index.html)
     ============================================================ */
     header {
       background: var(--navy);
@@ -113,7 +112,6 @@
       color: var(--gold-light);
     }
 
-    /* Hamburger (mobile) */
     .nav-toggle {
       display: none;
       background: none;
@@ -132,12 +130,11 @@
     }
 
     /* ============================================================
-       HERO
+       PAGE HERO (gallery-specific, smaller than home hero)
     ============================================================ */
-    .hero {
+    .page-hero {
       background-color: var(--navy-dark);
       background-image:
-        /* diagonal rule lines suggesting craftsmanship */
         repeating-linear-gradient(
           -45deg,
           transparent,
@@ -146,13 +143,13 @@
           rgba(200,169,110,0.04) 41px
         );
       color: var(--white);
-      padding: 100px 24px 110px;
+      padding: 64px 24px 72px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
 
-    .hero::before {
+    .page-hero::before {
       content: '';
       position: absolute;
       inset: 0;
@@ -160,7 +157,7 @@
       pointer-events: none;
     }
 
-    .hero-badge {
+    .page-hero-badge {
       display: inline-block;
       background: rgba(200,169,110,0.15);
       border: 1px solid rgba(200,169,110,0.4);
@@ -171,40 +168,231 @@
       text-transform: uppercase;
       padding: 6px 18px;
       border-radius: 100px;
-      margin-bottom: 28px;
+      margin-bottom: 20px;
     }
 
-    .hero h1 {
+    .page-hero h1 {
       font-family: var(--font-head);
-      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-size: clamp(2rem, 4.5vw, 3rem);
       font-weight: 700;
       line-height: 1.15;
-      margin-bottom: 20px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-bottom: 14px;
     }
 
-    .hero p {
-      font-size: 1.15rem;
+    .page-hero p {
+      font-size: 1.05rem;
       font-weight: 300;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 36px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .hero-cta-group {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
+      color: rgba(255,255,255,0.7);
+      max-width: 480px;
+      margin: 0 auto;
     }
 
     /* ============================================================
-       BUTTONS
+       FILTER BAR
     ============================================================ */
+    .filter-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--grey-200);
+      padding: 16px 24px;
+    }
+
+    .filter-bar-inner {
+      max-width: 1140px;
+      margin: auto;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      background: var(--grey-100);
+      border: 1.5px solid var(--grey-200);
+      color: var(--grey-700);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--gold);
+      color: var(--navy);
+    }
+
+    .filter-btn.active {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--white);
+    }
+
+    /* ============================================================
+       GALLERY SECTION
+    ============================================================ */
+    .gallery-section {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    .section-label {
+      display: block;
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .gallery-section h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .gallery-sub {
+      text-align: center;
+      color: var(--grey-700);
+      font-size: 0.95rem;
+      margin-bottom: 44px;
+    }
+
+    /* Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    /* Individual card */
+    .gallery-card {
+      background: var(--white);
+      border: 1px solid var(--grey-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+    }
+
+    .gallery-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-4px);
+      border-color: var(--gold-light);
+    }
+
+    /* Before / after image row */
+    .ba-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .ba-col {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ba-col img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      cursor: zoom-in;
+      transition: transform 0.3s;
+    }
+
+    .ba-col:hover img { transform: scale(1.04); }
+
+    .ba-label {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      background: rgba(15,36,56,0.78);
+      color: var(--white);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 100px;
+      pointer-events: none;
+    }
+
+    .ba-divider {
+      width: 2px;
+      background: var(--cream);
+    }
+
+    /* Card footer */
+    .gallery-card-footer {
+      padding: 14px 16px;
+      border-top: 1px solid var(--grey-200);
+    }
+
+    .gallery-card-title {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .gallery-card-tag {
+      display: inline-block;
+      margin-top: 5px;
+      background: var(--grey-100);
+      color: var(--grey-700);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    /* Empty / loading state */
+    .gallery-empty {
+      text-align: center;
+      padding: 80px 24px;
+      color: var(--grey-700);
+      grid-column: 1 / -1;
+    }
+
+    .gallery-empty p {
+      font-size: 1rem;
+      margin-top: 8px;
+      opacity: 0.7;
+    }
+
+    /* ============================================================
+       CTA BAND
+    ============================================================ */
+    .cta-band {
+      background: var(--navy);
+      padding: 64px 24px;
+      text-align: center;
+    }
+
+    .cta-band h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .cta-band p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+
     .btn-primary {
       display: inline-block;
       background: var(--gold);
@@ -223,378 +411,8 @@
     .btn-primary:hover { background: #d4b47a; }
     .btn-primary:active { transform: scale(0.98); }
 
-    .btn-outline {
-      display: inline-block;
-      background: transparent;
-      color: var(--white);
-      padding: 13px 28px;
-      border-radius: var(--radius);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border: 1.5px solid rgba(255,255,255,0.35);
-      cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
-    }
-
-    .btn-outline:hover {
-      border-color: rgba(255,255,255,0.75);
-      background: rgba(255,255,255,0.06);
-    }
-
     /* ============================================================
-       SECTION BASE
-    ============================================================ */
-    section {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 80px 24px;
-    }
-
-    .section-label {
-      display: block;
-      text-align: center;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-family: var(--font-head);
-      font-size: clamp(1.7rem, 3vw, 2.4rem);
-      color: var(--navy);
-      text-align: center;
-      margin-bottom: 50px;
-      line-height: 1.2;
-    }
-
-    /* ============================================================
-       TRUST BAR
-    ============================================================ */
-    .trust-bar {
-      background: var(--navy);
-      padding: 0;
-    }
-
-    .trust-bar-inner {
-      max-width: 1140px;
-      margin: auto;
-      padding: 24px;
-      display: flex;
-      justify-content: center;
-      gap: 48px;
-      flex-wrap: wrap;
-    }
-
-    .trust-item {
-      color: rgba(255,255,255,0.85);
-      font-size: 0.9rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .trust-item::before {
-      content: '';
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-
-    /* ============================================================
-       SERVICES
-    ============================================================ */
-    #services { background: var(--white); max-width: 100%; }
-    #services > * { max-width: 1140px; margin-left: auto; margin-right: auto; }
-    #services section-inner { padding: 80px 24px; }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 24px 80px;
-    }
-
-    .service-card {
-      background: var(--cream);
-      border: 1px solid var(--grey-200);
-      border-radius: var(--radius-lg);
-      padding: 28px 24px;
-      text-align: center;
-      transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
-    }
-
-    .service-card:hover {
-      box-shadow: var(--shadow);
-      transform: translateY(-3px);
-      border-color: var(--gold-light);
-    }
-
-    .service-icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    .service-card h3 {
-      font-family: var(--font-head);
-      font-size: 1.05rem;
-      color: var(--navy);
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .service-card p {
-      font-size: 0.85rem;
-      color: var(--grey-700);
-    }
-
-    /* ============================================================
-       PROCESS
-    ============================================================ */
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 24px;
-      counter-reset: step;
-    }
-
-    .process-step {
-      background: var(--white);
-      border: 1px solid var(--grey-200);
-      border-radius: var(--radius-lg);
-      padding: 28px 24px 24px;
-      position: relative;
-      counter-increment: step;
-    }
-
-    .process-step::before {
-      content: counter(step, decimal-leading-zero);
-      font-family: var(--font-head);
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--gold-light);
-      display: block;
-      line-height: 1;
-      margin-bottom: 10px;
-    }
-
-    .process-step p {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--navy);
-    }
-
-    /* ============================================================
-       WHY US
-    ============================================================ */
-    .why-us-band {
-      background: var(--navy);
-      padding: 70px 24px;
-    }
-
-    .why-us-inner {
-      max-width: 1140px;
-      margin: auto;
-    }
-
-    .why-us-band h2 { color: var(--white); }
-    .why-us-band .section-label { color: var(--gold); }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 28px;
-      margin-top: 0;
-    }
-
-    .why-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(200,169,110,0.2);
-      border-radius: var(--radius-lg);
-      padding: 28px 22px;
-      text-align: center;
-    }
-
-    .why-card-number {
-      font-family: var(--font-head);
-      font-size: 2.4rem;
-      color: var(--gold);
-      font-weight: 700;
-      line-height: 1;
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .why-card h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 6px;
-    }
-
-    .why-card p {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.6);
-    }
-
-    /* ============================================================
-       REVIEWS
-    ============================================================ */
-    .review-form-container {
-      background: var(--white);
-      border: 1px solid var(--grey-200);
-      border-radius: var(--radius-lg);
-      padding: 36px;
-      max-width: 520px;
-      margin: 0 auto 48px;
-      box-shadow: var(--shadow);
-    }
-
-    .review-form-container h3 {
-      font-family: var(--font-head);
-      font-size: 1.3rem;
-      color: var(--navy);
-      margin-bottom: 20px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .form-group label {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--grey-700);
-    }
-
-    select, textarea, input[type="file"] {
-      width: 100%;
-      padding: 10px 14px;
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      border: 1.5px solid var(--grey-200);
-      border-radius: var(--radius);
-      background: var(--cream);
-      color: var(--grey-900);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    select:focus, textarea:focus { border-color: var(--navy); }
-
-    textarea { resize: vertical; min-height: 100px; }
-
-    input[type="file"] { padding: 8px 10px; cursor: pointer; }
-
-    .review-list { max-width: 700px; margin: 0 auto; }
-
-    .review-card {
-      background: var(--white);
-      border: 1px solid var(--grey-200);
-      border-radius: var(--radius-lg);
-      padding: 22px 24px;
-      margin-bottom: 16px;
-    }
-
-    .review-stars { color: #f5a623; font-size: 1.1rem; margin-bottom: 8px; }
-    .review-text { font-size: 0.95rem; color: var(--grey-700); }
-    .review-card img { width: 100%; max-width: 180px; margin-top: 12px; border-radius: var(--radius); cursor: pointer; }
-
-    .btn-delete {
-      margin-top: 12px;
-      background: none;
-      border: 1px solid #e0e0e0;
-      color: #999;
-      padding: 5px 12px;
-      border-radius: var(--radius);
-      cursor: pointer;
-      font-size: 0.8rem;
-      font-family: var(--font-body);
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .btn-delete:hover { background: #fee; color: #c62828; border-color: #f5c6c6; }
-
-    /* ============================================================
-       CONTACT
-    ============================================================ */
-    .contact-band {
-      background: var(--navy-dark);
-      padding: 80px 24px;
-    }
-
-    .contact-inner {
-      max-width: 1140px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .contact-band h2 { color: var(--white); margin-bottom: 14px; }
-    .contact-band .section-label { color: var(--gold); }
-
-    .contact-sub {
-      color: rgba(255,255,255,0.6);
-      font-size: 1rem;
-      margin-bottom: 44px;
-    }
-
-    .contact-cards {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 32px;
-    }
-
-    .contact-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(200,169,110,0.25);
-      border-radius: var(--radius-lg);
-      padding: 24px 32px;
-      min-width: 220px;
-    }
-
-    .contact-card-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 6px;
-    }
-
-    .contact-card a {
-      color: var(--white);
-      text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: 600;
-      display: block;
-    }
-
-    .contact-card a:hover { color: var(--gold-light); }
-
-    .contact-card-name {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.5);
-      margin-top: 3px;
-    }
-
-    /* ============================================================
-       FOOTER
+       FOOTER  (identical to index.html)
     ============================================================ */
     footer {
       background: var(--grey-900);
@@ -628,7 +446,7 @@
     }
 
     /* ============================================================
-       MOBILE NAV
+       MOBILE NAV  (identical to index.html)
     ============================================================ */
     @media (max-width: 768px) {
       .nav-toggle { display: block; }
@@ -647,22 +465,10 @@
       }
 
       nav ul.open { display: flex; }
-
       nav ul li { width: 100%; }
       nav a { display: block; padding: 10px 14px; }
-    }
 
-    /* ============================================================
-       SECTION ALTERNATING BG
-    ============================================================ */
-    #services-section {
-      background: var(--white);
-      padding-top: 80px;
-    }
-
-    #services-section h2, #services-section .section-label {
-      text-align: center;
-      padding: 0 24px;
+      .ba-col img { height: 130px; }
     }
   </style>
 </head>
@@ -684,211 +490,67 @@
     </button>
 
     <ul id="navLinks">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#process">Process</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
     </ul>
   </nav>
 </header>
 
 
 <!-- ============================================================
-     HERO
+     PAGE HERO
 ============================================================ -->
-<div class="hero">
-  <div class="hero-badge">Since 2008 · Austin & Surrounding Areas</div>
-  <h1>Your Home,<br>in Trusted Hands</h1>
-  <p>Expert painting and remodeling — done right the first time, every time.</p>
-  <div class="hero-cta-group">
-    <a href="#contact" class="btn-primary">Get a Free Estimate</a>
-    <a href="gallery.html" class="btn-outline">View Our Work</a>
+<div class="page-hero">
+  <div class="page-hero-badge">Our Work · Austin & Surrounding Areas</div>
+  <h1>Project Gallery</h1>
+  <p>Before & after photos from real jobs — kitchens, bathrooms, paint, flooring, and more.</p>
+</div>
+
+
+<!-- ============================================================
+     FILTER BAR
+============================================================ -->
+<div class="filter-bar">
+  <div class="filter-bar-inner" id="filterBar">
+    <button class="filter-btn active" data-filter="all">All Projects</button>
+    <button class="filter-btn" data-filter="kitchen">Kitchen</button>
+    <button class="filter-btn" data-filter="bathroom">Bathroom</button>
+    <button class="filter-btn" data-filter="painting">Painting</button>
+    <button class="filter-btn" data-filter="flooring">Flooring</button>
+    <button class="filter-btn" data-filter="other">Other</button>
   </div>
 </div>
 
 
 <!-- ============================================================
-     TRUST BAR
+     GALLERY
 ============================================================ -->
-<div class="trust-bar">
-  <div class="trust-bar-inner">
-    <div class="trust-item">Over 15 Years of Experience</div>
-    <div class="trust-item">Free Estimates</div>
-    <div class="trust-item">Satisfaction Guaranteed</div>
-    <div class="trust-item">Austin & Surrounding Areas</div>
-  </div>
-</div>
+<div class="gallery-section">
+  <span class="section-label">Completed Projects</span>
+  <h2>See the Difference</h2>
+  <p class="gallery-sub">Click any photo to enlarge. Swipe left/right on mobile.</p>
 
-
-<!-- ============================================================
-     SERVICES
-============================================================ -->
-<div id="services-section" id="services">
-  <span class="section-label" style="display:block;text-align:center;padding-top:80px;">What We Do</span>
-  <h2>Our Services</h2>
-
-  <div class="services-grid" id="services">
-    <div class="service-card">
-      <span class="service-icon">🍳</span>
-      <h3>Kitchen Renovation</h3>
-      <p>Full remodels from cabinets to countertops</p>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">🛁</span>
-      <h3>Bathroom Renovation</h3>
-      <p>Complete bathroom transformations</p>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">🖌️</span>
-      <h3>Interior & Exterior Painting</h3>
-      <p>Clean, precise, professional finish</p>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">💧</span>
-      <h3>Powerwashing</h3>
-      <p>Driveways, siding, decks, and more</p>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">🧱</span>
-      <h3>Sheetrock & Texture</h3>
-      <p>Repairs, installs, and custom textures</p>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">🪵</span>
-      <h3>Flooring</h3>
-      <p>Wood, tile, vinyl, and laminate</p>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">🔨</span>
-      <h3>Carpentry</h3>
-      <p>Custom trim, doors, and woodwork</p>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">💡</span>
-      <h3>Lighting</h3>
-      <p>Fixture installs and upgrades</p>
+  <div class="gallery-grid" id="galleryGrid">
+    <!-- Cards injected by JS -->
+    <div class="gallery-empty" id="galleryEmpty">
+      <strong style="font-family:var(--font-head);font-size:1.2rem;color:var(--navy);">Photos Coming Soon</strong>
+      <p>Check back as we add before & after shots from recent projects.</p>
     </div>
   </div>
 </div>
 
 
 <!-- ============================================================
-     WHY US
+     CTA BAND
 ============================================================ -->
-<div class="why-us-band">
-  <div class="why-us-inner">
-    <span class="section-label">Why Homeowners Trust Us</span>
-    <h2>Built on Reputation</h2>
-
-    <div class="why-grid">
-      <div class="why-card">
-        <span class="why-card-number">15+</span>
-        <h3>Years in Business</h3>
-        <p>Serving Austin families since 2008</p>
-      </div>
-      <div class="why-card">
-        <span class="why-card-number">100%</span>
-        <h3>Satisfaction Guaranteed</h3>
-        <p>We don't leave until you're happy</p>
-      </div>
-      <div class="why-card">
-        <span class="why-card-number">$0</span>
-        <h3>Free Estimates</h3>
-        <p>No obligation, no surprises</p>
-      </div>
-      <div class="why-card">
-        <span class="why-card-number">⭐</span>
-        <h3>Highly Reviewed</h3>
-        <p>Trusted by hundreds of homeowners</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ============================================================
-     PROCESS
-============================================================ -->
-<section id="process">
-  <span class="section-label">How It Works</span>
-  <h2>Our Process</h2>
-
-  <div class="process-steps">
-    <div class="process-step"><p>Contact Us</p></div>
-    <div class="process-step"><p>We Visit & View the Job</p></div>
-    <div class="process-step"><p>You Receive an Estimate</p></div>
-    <div class="process-step"><p>We Discuss the Details</p></div>
-    <div class="process-step"><p>Set a Start Date</p></div>
-    <div class="process-step"><p>We Complete the Work</p></div>
-    <div class="process-step"><p>Final Walk-Through — We Don't Leave Until You're Satisfied</p></div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     REVIEWS
-============================================================ -->
-<section id="reviews">
-  <span class="section-label">Customer Feedback</span>
-  <h2>Leave a Review</h2>
-
-  <div class="review-form-container">
-    <h3>Share Your Experience</h3>
-    <div class="form-group">
-      <label for="stars">Rating</label>
-      <select id="stars">
-        <option value="5">★★★★★  Excellent (5 Stars)</option>
-        <option value="4">★★★★☆  Great (4 Stars)</option>
-        <option value="3">★★★☆☆  Good (3 Stars)</option>
-        <option value="2">★★☆☆☆  Fair (2 Stars)</option>
-        <option value="1">★☆☆☆☆  Poor (1 Star)</option>
-      </select>
-
-      <label for="reviewText">Your Review</label>
-      <textarea id="reviewText" placeholder="Tell us about your experience..."></textarea>
-
-      <label for="reviewImage">Attach a Photo (optional)</label>
-      <input type="file" id="reviewImage" accept="image/*">
-
-      <button class="btn-primary" onclick="addReview()" style="width:100%;border:none;font-family:var(--font-body);font-size:1rem;margin-top:4px;">Submit Review</button>
-    </div>
-  </div>
-
-  <div class="review-list" id="reviewList"></div>
-</section>
-
-
-<!-- ============================================================
-     CONTACT
-============================================================ -->
-<div class="contact-band" id="contact">
-  <div class="contact-inner">
-    <span class="section-label">Get In Touch</span>
-    <h2>Contact Us</h2>
-    <p class="contact-sub">Ready to start your project? Reach out for a free, no-obligation estimate.</p>
-
-    <div class="contact-cards">
-      <div class="contact-card">
-        <div class="contact-card-label">📞 Call or Text</div>
-        <a href="tel:15125176845">512-517-6845</a>
-        <div class="contact-card-name">Fabian Cordero</div>
-      </div>
-      <div class="contact-card">
-        <div class="contact-card-label">📞 Call or Text</div>
-        <a href="tel:15125176380">512-517-6380</a>
-        <div class="contact-card-name">Fatima Cordero</div>
-      </div>
-      <div class="contact-card">
-        <div class="contact-card-label">✉️ Email</div>
-        <a href="mailto:Fabiancolonialpainting@gmail.com">Fabiancolonialpainting@gmail.com</a>
-        <div class="contact-card-name">Response within 24 hrs</div>
-      </div>
-    </div>
-
-    <a href="tel:15125176845" class="btn-primary">Call Now for a Free Estimate</a>
-  </div>
+<div class="cta-band">
+  <h2>Ready to Transform Your Home?</h2>
+  <p>Get a free, no-obligation estimate — we'd love to show you what we can do.</p>
+  <a href="index.html#contact" class="btn-primary">Get a Free Estimate</a>
 </div>
 
 
@@ -916,81 +578,86 @@
     document.getElementById('navLinks').classList.toggle('open');
   });
 
-  /* --- Review submission --- */
-  function addReview() {
-    const stars = document.getElementById('stars').value;
-    const text  = document.getElementById('reviewText').value.trim();
-    const file  = document.getElementById('reviewImage').files[0];
-
-    if (!text) return;
-
-    const card = document.createElement('div');
-    card.className = 'review-card';
-
-    const starRow = document.createElement('div');
-    starRow.className = 'review-stars';
-    starRow.textContent = '★'.repeat(stars) + '☆'.repeat(5 - stars);
-
-    const textEl = document.createElement('p');
-    textEl.className = 'review-text';
-    textEl.textContent = text;
-
-    card.appendChild(starRow);
-    card.appendChild(textEl);
-
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        const img = document.createElement('img');
-        img.src = e.target.result;
-        img.onclick = () => openLightbox(e.target.result);
-        card.appendChild(img);
-      };
-      reader.readAsDataURL(file);
-    }
-
-    /* Delete button */
-    const del = document.createElement('button');
-    del.className = 'btn-delete';
-    del.textContent = 'Delete';
-    del.onclick = () => card.remove();
-    card.appendChild(del);
-
-    document.getElementById('reviewList').prepend(card);
-
-    /* Reset form */
-    document.getElementById('reviewText').value = '';
-    document.getElementById('reviewImage').value = '';
-  }
-
   /* --- Lightbox --- */
   function openLightbox(src) {
     document.getElementById('lightbox-img').src = src;
     document.getElementById('lightbox-overlay').style.display = 'flex';
   }
 
-  document.getElementById('lightbox-overlay').onclick = function () {
+  document.getElementById('lightbox-overlay').addEventListener('click', function () {
     this.style.display = 'none';
-  };
+  });
 
-  /* --- Active nav on scroll --- */
-  const allSections = document.querySelectorAll('section[id], div[id]');
-  const allNavLinks = document.querySelectorAll('nav ul li a');
+  /* --- Gallery state --- */
+  let allItems = [];
+  let activeFilter = 'all';
 
-  function updateNav() {
-    let current = '';
-    allSections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
-    });
-    allNavLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
-      if (window.scrollY < 200 && link.getAttribute('href') === 'index.html') link.classList.add('active');
-    });
+  /* --- Build a card element --- */
+  function buildCard(item) {
+    const card = document.createElement('div');
+    card.className = 'gallery-card';
+    card.dataset.category = (item.category || 'other').toLowerCase();
+
+    card.innerHTML = `
+      <div class="ba-row">
+        <div class="ba-col">
+          <img src="${item.before}" alt="Before – ${item.title}" loading="lazy" onclick="openLightbox('${item.before}')">
+          <span class="ba-label">Before</span>
+        </div>
+        <div class="ba-divider"></div>
+        <div class="ba-col">
+          <img src="${item.after}" alt="After – ${item.title}" loading="lazy" onclick="openLightbox('${item.after}')">
+          <span class="ba-label">After</span>
+        </div>
+      </div>
+      <div class="gallery-card-footer">
+        <div class="gallery-card-title">${item.title}</div>
+        ${item.category ? `<span class="gallery-card-tag">${item.category}</span>` : ''}
+      </div>
+    `;
+    return card;
   }
 
-  window.addEventListener('scroll', updateNav);
-  window.addEventListener('load', updateNav);
+  /* --- Render filtered list --- */
+  function renderGallery() {
+    const grid = document.getElementById('galleryGrid');
+    const empty = document.getElementById('galleryEmpty');
+
+    // Remove existing cards (keep empty placeholder in DOM)
+    grid.querySelectorAll('.gallery-card').forEach(c => c.remove());
+
+    const filtered = activeFilter === 'all'
+      ? allItems
+      : allItems.filter(i => (i.category || 'other').toLowerCase() === activeFilter);
+
+    if (filtered.length === 0) {
+      empty.style.display = 'block';
+    } else {
+      empty.style.display = 'none';
+      filtered.forEach(item => grid.appendChild(buildCard(item)));
+    }
+  }
+
+  /* --- Filter buttons --- */
+  document.getElementById('filterBar').addEventListener('click', function (e) {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    renderGallery();
+  });
+
+  /* --- Load gallery.json --- */
+  fetch('gallery.json')
+    .then(res => res.json())
+    .then(data => {
+      allItems = data;
+      renderGallery();
+    })
+    .catch(() => {
+      // No JSON file yet — empty state is already shown
+    });
 </script>
 
 </body>
