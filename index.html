@@ -2,108 +2,691 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-<meta name="google-site-verification" content="lND_Y8YuDA-zzYhe3ATFT6733HKrsW7WOqOi4YPT84Y" />
-  <title>Colonial Painting & Remodeling</title>
+  <meta name="google-site-verification" content="lND_Y8YuDA-zzYhe3ATFT6733HKrsW7WOqOi4YPT84Y" />
+  <title>Colonial Painting & Remodeling | Austin, TX</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Austin's trusted painting and remodeling experts since 2008. Kitchen & bathroom renovations, interior & exterior painting, flooring, and more. Free estimates.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    html {
-      scroll-behavior: smooth; /* Smooth scrolling */
-    }
-
+    /* ============================================================
+       VARIABLES & RESET
+    ============================================================ */
     :root {
-      --blue: #004f98;
-      --dark-grey: #2b2b2b;
-      --light-grey: #f4f4f4;
-      --white: #ffffff;
+      --navy:      #1a3a5c;
+      --navy-dark: #0f2438;
+      --gold:      #c8a96e;
+      --gold-light:#e8d5ab;
+      --cream:     #faf9f6;
+      --white:     #ffffff;
+      --grey-100:  #f4f3ef;
+      --grey-200:  #e8e7e2;
+      --grey-700:  #4a4a4a;
+      --grey-900:  #1e1e1e;
+      --font-head: 'Playfair Display', Georgia, serif;
+      --font-body: 'Source Sans 3', Arial, sans-serif;
+      --radius:    8px;
+      --radius-lg: 14px;
+      --shadow:    0 4px 24px rgba(26,58,92,0.10);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
-    body { color: var(--dark-grey); line-height: 1.6; }
+    html { scroll-behavior: smooth; }
 
-    header { background: var(--blue); color: var(--white); padding: 20px; position: sticky; top: 0; z-index: 100; }
-    nav { max-width: 1100px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
-    nav ul { list-style: none; display: flex; gap: 20px; }
-    nav a { color: var(--white); text-decoration: none; font-weight: bold; }
-    nav a.active { text-decoration: underline; }
-
-    .hero { text-align: center; padding: 90px 20px; background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)); color: white; }
-    .hero h1 { font-size: 2.6rem; }
-    .hero p { font-size: 1.2rem; margin: 10px 0; }
-    .btn { display: inline-block; background: var(--blue); color: white; padding: 15px 25px; border-radius: 5px; text-decoration: none; margin-top: 20px; font-weight: bold; cursor: pointer; }
-
-    section { max-width: 1100px; margin: auto; padding: 60px 20px; }
-    h2 { text-align: center; color: var(--blue); margin-bottom: 30px; }
-
-    .services, .process { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-    .box { background: var(--light-grey); padding: 25px; border-radius: 6px; text-align: center; font-weight: bold; }
-    .dark { background: var(--dark-grey); color: white; }
-    .contact { text-align: center; }
-    .reviews { text-align: center; }
-
-    /* Review form fixes */
-    input, textarea, select {
-      width: 100%;
-      max-width: 400px;
-      padding: 10px;
-      margin: 0;
-      vertical-align: middle;
-      font-size: 16px;
-      line-height: 1.4;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+    *, *::before, *::after {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .review-form {
+    body {
+      font-family: var(--font-body);
+      color: var(--grey-900);
+      background: var(--cream);
+      line-height: 1.65;
+    }
+
+    /* ============================================================
+       HEADER & NAV
+    ============================================================ */
+    header {
+      background: var(--navy);
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    }
+
+    nav {
+      max-width: 1140px;
+      margin: auto;
+      padding: 0 24px;
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-      max-width: 400px;
+      justify-content: space-between;
+      align-items: center;
+      height: 68px;
+    }
+
+    .nav-brand {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+
+    .nav-brand span {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 300;
+      color: var(--gold-light);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    nav a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: var(--radius);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      background: rgba(200,169,110,0.18);
+      color: var(--gold-light);
+    }
+
+    /* Hamburger (mobile) */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      margin: 5px 0;
+      transition: all 0.3s;
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      background-color: var(--navy-dark);
+      background-image:
+        /* diagonal rule lines suggesting craftsmanship */
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 40px,
+          rgba(200,169,110,0.04) 40px,
+          rgba(200,169,110,0.04) 41px
+        );
+      color: var(--white);
+      padding: 100px 24px 110px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(200,169,110,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(200,169,110,0.15);
+      border: 1px solid rgba(200,169,110,0.4);
+      color: var(--gold-light);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 36px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy-dark);
+      padding: 14px 30px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-primary:hover { background: #d4b47a; }
+    .btn-primary:active { transform: scale(0.98); }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--white);
+      padding: 13px 28px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* ============================================================
+       SECTION BASE
+    ============================================================ */
+    section {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .section-label {
+      display: block;
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 50px;
+      line-height: 1.2;
+    }
+
+    /* ============================================================
+       TRUST BAR
+    ============================================================ */
+    .trust-bar {
+      background: var(--navy);
+      padding: 0;
+    }
+
+    .trust-bar-inner {
+      max-width: 1140px;
+      margin: auto;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .trust-item::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       SERVICES
+    ============================================================ */
+    #services { background: var(--white); max-width: 100%; }
+    #services > * { max-width: 1140px; margin-left: auto; margin-right: auto; }
+    #services section-inner { padding: 80px 24px; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    .service-card {
+      background: var(--cream);
+      border: 1px solid var(--grey-200);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+    }
+
+    .service-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-3px);
+      border-color: var(--gold-light);
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .service-card h3 {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      color: var(--navy);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .service-card p {
+      font-size: 0.85rem;
+      color: var(--grey-700);
+    }
+
+    /* ============================================================
+       PROCESS
+    ============================================================ */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
+      counter-reset: step;
+    }
+
+    .process-step {
+      background: var(--white);
+      border: 1px solid var(--grey-200);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px 24px;
+      position: relative;
+      counter-increment: step;
+    }
+
+    .process-step::before {
+      content: counter(step, decimal-leading-zero);
+      font-family: var(--font-head);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      display: block;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .process-step p {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    /* ============================================================
+       WHY US
+    ============================================================ */
+    .why-us-band {
+      background: var(--navy);
+      padding: 70px 24px;
+    }
+
+    .why-us-inner {
+      max-width: 1140px;
       margin: auto;
     }
 
-    .review-list { margin-top: 30px; }
-    .review-list img { width: 100%; max-width: 200px; margin-top: 10px; border-radius: 6px; cursor: pointer; }
+    .why-us-band h2 { color: var(--white); }
+    .why-us-band .section-label { color: var(--gold); }
 
-    /* Lightbox overlay */
-    #lightbox-overlay {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center;
-      z-index: 1000;
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 28px;
+      margin-top: 0;
     }
-    #lightbox-overlay img { max-width: 90%; max-height: 90%; border-radius: 6px; }
 
-    footer { background: var(--dark-grey); color: white; text-align: center; padding: 20px; }
+    .why-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(200,169,110,0.2);
+      border-radius: var(--radius-lg);
+      padding: 28px 22px;
+      text-align: center;
+    }
 
-    /* ===== ADDED: Delete review button styles ===== */
-    .delete-review {
-      margin-top: 10px;
-      background: #c62828;
-      color: white;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 4px;
+    .why-card-number {
+      font-family: var(--font-head);
+      font-size: 2.4rem;
+      color: var(--gold);
+      font-weight: 700;
+      line-height: 1;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .why-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .why-card p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ============================================================
+       REVIEWS
+    ============================================================ */
+    .review-form-container {
+      background: var(--white);
+      border: 1px solid var(--grey-200);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      max-width: 520px;
+      margin: 0 auto 48px;
+      box-shadow: var(--shadow);
+    }
+
+    .review-form-container h3 {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .form-group label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--grey-700);
+    }
+
+    select, textarea, input[type="file"] {
+      width: 100%;
+      padding: 10px 14px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      border: 1.5px solid var(--grey-200);
+      border-radius: var(--radius);
+      background: var(--cream);
+      color: var(--grey-900);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    select:focus, textarea:focus { border-color: var(--navy); }
+
+    textarea { resize: vertical; min-height: 100px; }
+
+    input[type="file"] { padding: 8px 10px; cursor: pointer; }
+
+    .review-list { max-width: 700px; margin: 0 auto; }
+
+    .review-card {
+      background: var(--white);
+      border: 1px solid var(--grey-200);
+      border-radius: var(--radius-lg);
+      padding: 22px 24px;
+      margin-bottom: 16px;
+    }
+
+    .review-stars { color: #f5a623; font-size: 1.1rem; margin-bottom: 8px; }
+    .review-text { font-size: 0.95rem; color: var(--grey-700); }
+    .review-card img { width: 100%; max-width: 180px; margin-top: 12px; border-radius: var(--radius); cursor: pointer; }
+
+    .btn-delete {
+      margin-top: 12px;
+      background: none;
+      border: 1px solid #e0e0e0;
+      color: #999;
+      padding: 5px 12px;
+      border-radius: var(--radius);
       cursor: pointer;
-      font-size: 14px;
+      font-size: 0.8rem;
+      font-family: var(--font-body);
+      transition: background 0.2s, color 0.2s;
     }
 
-    .delete-review:hover {
-      background: #a61d1d;
+    .btn-delete:hover { background: #fee; color: #c62828; border-color: #f5c6c6; }
+
+    /* ============================================================
+       CONTACT
+    ============================================================ */
+    .contact-band {
+      background: var(--navy-dark);
+      padding: 80px 24px;
+    }
+
+    .contact-inner {
+      max-width: 1140px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .contact-band h2 { color: var(--white); margin-bottom: 14px; }
+    .contact-band .section-label { color: var(--gold); }
+
+    .contact-sub {
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+      margin-bottom: 44px;
+    }
+
+    .contact-cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(200,169,110,0.25);
+      border-radius: var(--radius-lg);
+      padding: 24px 32px;
+      min-width: 220px;
+    }
+
+    .contact-card-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .contact-card a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: block;
+    }
+
+    .contact-card a:hover { color: var(--gold-light); }
+
+    .contact-card-name {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 3px;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--grey-900);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.85rem;
+    }
+
+    footer strong { color: rgba(255,255,255,0.8); }
+
+    /* ============================================================
+       LIGHTBOX
+    ============================================================ */
+    #lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      cursor: zoom-out;
+    }
+
+    #lightbox-overlay img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+
+    /* ============================================================
+       MOBILE NAV
+    ============================================================ */
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--navy-dark);
+        flex-direction: column;
+        padding: 16px;
+        gap: 4px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      }
+
+      nav ul.open { display: flex; }
+
+      nav ul li { width: 100%; }
+      nav a { display: block; padding: 10px 14px; }
+    }
+
+    /* ============================================================
+       SECTION ALTERNATING BG
+    ============================================================ */
+    #services-section {
+      background: var(--white);
+      padding-top: 80px;
+    }
+
+    #services-section h2, #services-section .section-label {
+      text-align: center;
+      padding: 0 24px;
     }
   </style>
 </head>
 
 <body>
 
+<!-- ============================================================
+     HEADER
+============================================================ -->
 <header>
   <nav>
-    <strong>Colonial Painting & Remodeling</strong>
-    <ul>
+    <a href="index.html" class="nav-brand">
+      Colonial Painting & Remodeling
+      <span>Est. 2008 · Austin, TX</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul id="navLinks">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#process">Our Process</a></li>
+      <li><a href="#process">Process</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -111,168 +694,303 @@
   </nav>
 </header>
 
-<section class="hero">
-  <h1>Your Home, in Trusted Hands</h1>
-  <p><strong>Since 2008</strong></p>
-  <p>Serving Austin & Surrounding Areas</p>
-  <a href="#contact" class="btn">Free Estimates</a>
-</section>
 
-<section id="services">
+<!-- ============================================================
+     HERO
+============================================================ -->
+<div class="hero">
+  <div class="hero-badge">Since 2008 · Austin & Surrounding Areas</div>
+  <h1>Your Home,<br>in Trusted Hands</h1>
+  <p>Expert painting and remodeling — done right the first time, every time.</p>
+  <div class="hero-cta-group">
+    <a href="#contact" class="btn-primary">Get a Free Estimate</a>
+    <a href="gallery.html" class="btn-outline">View Our Work</a>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     TRUST BAR
+============================================================ -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">Over 15 Years of Experience</div>
+    <div class="trust-item">Free Estimates</div>
+    <div class="trust-item">Satisfaction Guaranteed</div>
+    <div class="trust-item">Austin & Surrounding Areas</div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     SERVICES
+============================================================ -->
+<div id="services-section" id="services">
+  <span class="section-label" style="display:block;text-align:center;padding-top:80px;">What We Do</span>
   <h2>Our Services</h2>
-  <div class="services">
-    <div class="box">Full Kitchen & Bathroom Renovation</div>
-    <div class="box">Interior & Exterior Painting</div>
-    <div class="box">Powerwashing</div>
-    <div class="box">Sheetrock & Texture</div>
-    <div class="box">Flooring (Wood, Tile, Vinyl, Laminate)</div>
-    <div class="box">Carpentry</div>
-    <div class="box">Lighting</div>
-  </div>
-</section>
 
+  <div class="services-grid" id="services">
+    <div class="service-card">
+      <span class="service-icon">🍳</span>
+      <h3>Kitchen Renovation</h3>
+      <p>Full remodels from cabinets to countertops</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🛁</span>
+      <h3>Bathroom Renovation</h3>
+      <p>Complete bathroom transformations</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🖌️</span>
+      <h3>Interior & Exterior Painting</h3>
+      <p>Clean, precise, professional finish</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">💧</span>
+      <h3>Powerwashing</h3>
+      <p>Driveways, siding, decks, and more</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🧱</span>
+      <h3>Sheetrock & Texture</h3>
+      <p>Repairs, installs, and custom textures</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🪵</span>
+      <h3>Flooring</h3>
+      <p>Wood, tile, vinyl, and laminate</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔨</span>
+      <h3>Carpentry</h3>
+      <p>Custom trim, doors, and woodwork</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">💡</span>
+      <h3>Lighting</h3>
+      <p>Fixture installs and upgrades</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     WHY US
+============================================================ -->
+<div class="why-us-band">
+  <div class="why-us-inner">
+    <span class="section-label">Why Homeowners Trust Us</span>
+    <h2>Built on Reputation</h2>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-card-number">15+</span>
+        <h3>Years in Business</h3>
+        <p>Serving Austin families since 2008</p>
+      </div>
+      <div class="why-card">
+        <span class="why-card-number">100%</span>
+        <h3>Satisfaction Guaranteed</h3>
+        <p>We don't leave until you're happy</p>
+      </div>
+      <div class="why-card">
+        <span class="why-card-number">$0</span>
+        <h3>Free Estimates</h3>
+        <p>No obligation, no surprises</p>
+      </div>
+      <div class="why-card">
+        <span class="why-card-number">⭐</span>
+        <h3>Highly Reviewed</h3>
+        <p>Trusted by hundreds of homeowners</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     PROCESS
+============================================================ -->
 <section id="process">
+  <span class="section-label">How It Works</span>
   <h2>Our Process</h2>
-  <div class="process">
-    <div class="box">1️⃣ Contact Us</div>
-    <div class="box">2️⃣ Schedule a Visit to View the Job</div>
-    <div class="box">3️⃣ We Send You an Estimate</div>
-    <div class="box">4️⃣ Discuss the Estimate</div>
-    <div class="box">5️⃣ Set a Job Start Date</div>
-    <div class="box">6️⃣ We Complete the Work</div>
-    <div class="box">7️⃣ Final Walk-Through — We Don’t Leave Until You’re Satisfied</div>
+
+  <div class="process-steps">
+    <div class="process-step"><p>Contact Us</p></div>
+    <div class="process-step"><p>We Visit & View the Job</p></div>
+    <div class="process-step"><p>You Receive an Estimate</p></div>
+    <div class="process-step"><p>We Discuss the Details</p></div>
+    <div class="process-step"><p>Set a Start Date</p></div>
+    <div class="process-step"><p>We Complete the Work</p></div>
+    <div class="process-step"><p>Final Walk-Through — We Don't Leave Until You're Satisfied</p></div>
   </div>
 </section>
 
-<section id="reviews" class="reviews">
+
+<!-- ============================================================
+     REVIEWS
+============================================================ -->
+<section id="reviews">
+  <span class="section-label">Customer Feedback</span>
   <h2>Leave a Review</h2>
 
-  <div class="review-form">
-    <select id="stars">
-      <option value="5">★★★★★ (5 Stars)</option>
-      <option value="4">★★★★☆ (4 Stars)</option>
-      <option value="3">★★★☆☆ (3 Stars)</option>
-      <option value="2">★★☆☆☆ (2 Stars)</option>
-      <option value="1">★☆☆☆☆ (1 Star)</option>
-    </select>
+  <div class="review-form-container">
+    <h3>Share Your Experience</h3>
+    <div class="form-group">
+      <label for="stars">Rating</label>
+      <select id="stars">
+        <option value="5">★★★★★  Excellent (5 Stars)</option>
+        <option value="4">★★★★☆  Great (4 Stars)</option>
+        <option value="3">★★★☆☆  Good (3 Stars)</option>
+        <option value="2">★★☆☆☆  Fair (2 Stars)</option>
+        <option value="1">★☆☆☆☆  Poor (1 Star)</option>
+      </select>
 
-    <textarea id="reviewText" placeholder="Write your review here"></textarea>
+      <label for="reviewText">Your Review</label>
+      <textarea id="reviewText" placeholder="Tell us about your experience..."></textarea>
 
-    <input type="file" id="reviewImage" accept="image/*">
-    <button class="btn" onclick="addReview()">Submit Review</button>
+      <label for="reviewImage">Attach a Photo (optional)</label>
+      <input type="file" id="reviewImage" accept="image/*">
+
+      <button class="btn-primary" onclick="addReview()" style="width:100%;border:none;font-family:var(--font-body);font-size:1rem;margin-top:4px;">Submit Review</button>
+    </div>
   </div>
 
   <div class="review-list" id="reviewList"></div>
 </section>
 
-<section id="contact" class="contact dark">
-  <h2>Contact Us</h2>
-  <p>📞 Fabian Cordero: <a href="tel:15125176845" style="color:white;">512-517-6845</a></p>
-  <p>📞 Fatima Cordero: <a href="tel:15125176380" style="color:white;">512-517-6380</a></p>
-  <p>📧 Email: <a href="mailto:Fabiancolonialpainting@gmail.com" style="color:white;">Fabiancolonialpainting@gmail.com</a></p>
-  <p>Free Estimates • Austin & Surrounding Areas</p>
-</section>
 
+<!-- ============================================================
+     CONTACT
+============================================================ -->
+<div class="contact-band" id="contact">
+  <div class="contact-inner">
+    <span class="section-label">Get In Touch</span>
+    <h2>Contact Us</h2>
+    <p class="contact-sub">Ready to start your project? Reach out for a free, no-obligation estimate.</p>
+
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="contact-card-label">📞 Call or Text</div>
+        <a href="tel:15125176845">512-517-6845</a>
+        <div class="contact-card-name">Fabian Cordero</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-label">📞 Call or Text</div>
+        <a href="tel:15125176380">512-517-6380</a>
+        <div class="contact-card-name">Fatima Cordero</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-label">✉️ Email</div>
+        <a href="mailto:Fabiancolonialpainting@gmail.com">Fabiancolonialpainting@gmail.com</a>
+        <div class="contact-card-name">Response within 24 hrs</div>
+      </div>
+    </div>
+
+    <a href="tel:15125176845" class="btn-primary">Call Now for a Free Estimate</a>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
 <footer>
-  © 2025 Colonial Painting & Remodeling
+  <p><strong>Colonial Painting & Remodeling</strong> &nbsp;·&nbsp; Austin, TX &nbsp;·&nbsp; Est. 2008</p>
+  <p style="margin-top:6px;">© 2025 Colonial Painting & Remodeling. All rights reserved.</p>
 </footer>
 
+
+<!-- Lightbox overlay -->
 <div id="lightbox-overlay">
   <img id="lightbox-img" src="" alt="Enlarged Image">
 </div>
 
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
 <script>
-  // Review submission
+  /* --- Mobile nav toggle --- */
+  document.getElementById('navToggle').addEventListener('click', function () {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+
+  /* --- Review submission --- */
   function addReview() {
-    const stars = document.getElementById("stars").value;
-    const text = document.getElementById("reviewText").value;
-    const fileInput = document.getElementById("reviewImage");
-    const files = fileInput.files;
+    const stars = document.getElementById('stars').value;
+    const text  = document.getElementById('reviewText').value.trim();
+    const file  = document.getElementById('reviewImage').files[0];
 
-    if (text.trim() === "") return;
+    if (!text) return;
 
-    const div = document.createElement("div");
-    div.style.marginBottom = "20px";
+    const card = document.createElement('div');
+    card.className = 'review-card';
 
-    div.innerHTML = "⭐".repeat(stars) + "<br>" + text;
+    const starRow = document.createElement('div');
+    starRow.className = 'review-stars';
+    starRow.textContent = '★'.repeat(stars) + '☆'.repeat(5 - stars);
 
-    if (files.length > 0) {
+    const textEl = document.createElement('p');
+    textEl.className = 'review-text';
+    textEl.textContent = text;
+
+    card.appendChild(starRow);
+    card.appendChild(textEl);
+
+    if (file) {
       const reader = new FileReader();
-      reader.onload = function(e) {
-        const img = document.createElement("img");
+      reader.onload = function (e) {
+        const img = document.createElement('img');
         img.src = e.target.result;
         img.onclick = () => openLightbox(e.target.result);
-        div.appendChild(img);
-      }
-      reader.readAsDataURL(files[0]);
+        card.appendChild(img);
+      };
+      reader.readAsDataURL(file);
     }
 
-    /* ===== ADDED: Delete review button ===== */
-    const deleteBtn = document.createElement("button");
-    deleteBtn.className = "delete-review";
-    deleteBtn.textContent = "Delete Review";
-    deleteBtn.onclick = function () {
-      deleteReview(this);
-    };
-    div.appendChild(deleteBtn);
-    /* ===== END ADDITION ===== */
+    /* Delete button */
+    const del = document.createElement('button');
+    del.className = 'btn-delete';
+    del.textContent = 'Delete';
+    del.onclick = () => card.remove();
+    card.appendChild(del);
 
-    div.innerHTML += "<hr>";
-    document.getElementById("reviewList").prepend(div);
+    document.getElementById('reviewList').prepend(card);
 
-    document.getElementById("reviewText").value = "";
-    document.getElementById("reviewImage").value = "";
+    /* Reset form */
+    document.getElementById('reviewText').value = '';
+    document.getElementById('reviewImage').value = '';
   }
 
-  /* ===== ADDED: Delete review logic ===== */
-  function deleteReview(button) {
-    const reviewDiv = button.parentElement;
-    reviewDiv.remove();
-  }
-
-  // Lightbox
+  /* --- Lightbox --- */
   function openLightbox(src) {
-    const overlay = document.getElementById("lightbox-overlay");
-    const img = document.getElementById("lightbox-img");
-    img.src = src;
-    overlay.style.display = "flex";
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-overlay').style.display = 'flex';
   }
 
-  document.getElementById("lightbox-overlay").onclick = function() {
-    this.style.display = "none";
-  }
+  document.getElementById('lightbox-overlay').onclick = function () {
+    this.style.display = 'none';
+  };
 
-  // Dynamic nav underline while scrolling
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll("nav ul li a");
+  /* --- Active nav on scroll --- */
+  const allSections = document.querySelectorAll('section[id], div[id]');
+  const allNavLinks = document.querySelectorAll('nav ul li a');
 
   function updateNav() {
-    let current = "";
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 80;
-      if (pageYOffset >= sectionTop) {
-        current = section.getAttribute("id");
-      }
+    let current = '';
+    allSections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
     });
-
-    navLinks.forEach(link => {
-      link.classList.remove("active");
-
-      if (window.location.pathname.includes("gallery.html") && link.getAttribute("href") === "gallery.html") {
-        link.classList.add("active");
-      } else if (link.getAttribute("href") === "#" + current) {
-        link.classList.add("active");
-      }
-
-      if (pageYOffset < sections[0].offsetTop - 50 && link.getAttribute("href") === "index.html") {
-        link.classList.add("active");
-      }
+    allNavLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+      if (window.scrollY < 200 && link.getAttribute('href') === 'index.html') link.classList.add('active');
     });
   }
 
-  window.addEventListener("scroll", updateNav);
-  window.addEventListener("load", updateNav);
+  window.addEventListener('scroll', updateNav);
+  window.addEventListener('load', updateNav);
 </script>
 
 </body>
